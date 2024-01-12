@@ -1,0 +1,15 @@
+name: verify-conformance
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+jobs:
+  verify-conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - name: verify-conformance
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          docker run -it --rm \
+            -e GITHUB_TOKEN -e GITHUB_EVENT_FILE \
+              ghcr.io/cncf-infra/verify-conformance/action:latest
