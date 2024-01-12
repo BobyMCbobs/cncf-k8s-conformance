@@ -10,6 +10,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          docker run -it --rm \
+          docker run --rm \
+            --workdir /github/workspace \
             -e GITHUB_TOKEN -e GITHUB_EVENT_FILE \
+            -v "$PWD":"/github/workspace" \
+            -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" \
+            -v $GITHUB_EVENT_FILE:$GITHUB_EVENT_FILE \
               ghcr.io/cncf-infra/verify-conformance/action:latest
