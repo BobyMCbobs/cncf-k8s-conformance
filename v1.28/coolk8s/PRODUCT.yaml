@@ -1,0 +1,9 @@
+vendor: coolk8s
+name: coolk8s
+version: v1.28
+website_url: https://example.com
+documentation_url: https://example.com
+product_logo_url: https://github.com/BobyMCbobs.png
+type: distribution
+description: it's cool, ok?
+contact_email_address: hello@example.com
