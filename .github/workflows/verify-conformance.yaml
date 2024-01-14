@@ -2,6 +2,12 @@ name: verify-conformance
 on:
   pull_request: {}
   workflow_dispatch: {}
+permissions:
+  checks: write
+  contents: read
+  issues: write
+  pull-requests: write
+  statuses: write
 jobs:
   verify-conformance:
     runs-on: ubuntu-latest
